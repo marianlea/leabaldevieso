@@ -1,0 +1,6 @@
+{
+  "emmet.preferences": {},
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}
