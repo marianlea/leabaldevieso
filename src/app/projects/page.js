@@ -65,15 +65,7 @@ export default function Projects() {
       <div className="w-full sm:flex sm:items-center sm:justify-center">
         <div className="sm:w-2/3 sm:flex sm:items-center sm:justify-center">
           {projects.map((project, idx) => (
-            <Link
-              key={idx}
-              to={project.name}
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              <Card project={project} />
-            </Link>
+            <Card key={idx} project={project} />
           ))}
         </div>
       </div>

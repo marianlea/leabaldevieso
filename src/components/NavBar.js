@@ -5,6 +5,7 @@ import home from "/public/home.png";
 import download from "/public/download.svg";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { default as NextLink } from "next/link";
 
 const navigation = [
   { name: "about", href: "/about", current: false },
@@ -28,6 +29,7 @@ export default function NavBar() {
               spy={true}
               smooth={true}
               duration={500}
+              href="/home"
             >
               <Image src={home} alt="home" />
             </Link>
@@ -46,16 +48,23 @@ export default function NavBar() {
                     border-2 
                     border-accent
                     text-sm
-                    sm:text-base"
+                    sm:text-base
+                    hover:text-gray-400"
                 >
-                  <span className="absolute -inset-1.5" />
-                  <span className="mr-1 tracking-widest">resume</span>
-                  <Image
-                    src={download}
-                    alt="download resume"
-                    className="h-4 w-4 sm:h-5 sm:w-5"
-                    aria-hidden="true"
-                  />
+                  <NextLink
+                    href="/Lea_Baldevieso.pdf"
+                    download="Lea_Baldevieso.pdf"
+                    className="flex flex-row"
+                  >
+                    <span className="absolute -inset-1.5" />
+                    <span className="mr-1 tracking-widest">resume</span>
+                    <Image
+                      src={download}
+                      alt="download resume"
+                      className="h-4 w-4 sm:h-5 sm:w-5"
+                      aria-hidden="true"
+                    />
+                  </NextLink>
                 </button>
                 <div className="relative inset-y-0 right-0 flex items-center sm:hidden sm:sticky sm:top-0 sm:z-50">
                   {/* Mobile menu button*/}
@@ -75,6 +84,7 @@ export default function NavBar() {
                       {navigation.map((item) => (
                         <Link
                           key={item.name}
+                          href={`/${item.name}`}
                           to={item.name}
                           offset={item.name === "projects" ? -200 : 0}
                           spy={true}
@@ -108,6 +118,7 @@ export default function NavBar() {
                   offset={-100}
                   duration={500}
                   key={item.name}
+                  href={`/${item.name}`}
                   as="a"
                   className={classNames(
                     item.current

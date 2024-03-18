@@ -16,6 +16,7 @@ import tailwind from "/public/tailwind.png";
 import mui from "/public/mui.png";
 import stripe from "/public/stripe.png";
 import { useRouter } from "next/router";
+import { Link } from "react-scroll";
 
 const techStack = {
   javascript: js,
@@ -46,17 +47,16 @@ export default function Project({ project }) {
   };
 
   return (
-    <section
-      id={project.name}
-      className="py-10 sm:py-16 flex flex-col justify-center items-center text-center p-auto"
-    >
+    <section className="py-10 px-5 sm:py-16 flex flex-col justify-center items-center text-center p-auto">
       <div className="flex flex-col justify-center items-center text-center">
         <div className="flex justify-center w-full sm:w-2/4">
-          <Image
-            src={project.image}
-            alt={`${project.name} screenshot`}
-            className="w-full h-full "
-          />
+          <Link to={project.name}>
+            <Image
+              src={project.image}
+              alt={`${project.name} screenshot`}
+              className="w-full h-full "
+            />
+          </Link>
         </div>
         <div className="w-full text-center text-sm sm:flex sm:flex-row sm:justify-center sm:w-2/4 sm:m-auto sm:mt-6">
           <div className="my-3 text-lg sm:w-2/4 sm:text-start sm:text-1xl sm:tracking-[1rem]">

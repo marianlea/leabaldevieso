@@ -2,7 +2,7 @@ import NavBar from "@/components/NavBar";
 import About from "./about/page";
 import Contact from "./contact/page";
 import LandingPage from "./landingPage/page";
-import Project from "./project/[id]/page";
+import Project from "./projects/[projectId]/page";
 import mendls from "/public/mendls.png";
 import pipeline from "/public/pipeline.png";
 import stitches from "/public/stitches.png";
