@@ -15,7 +15,6 @@ import next from "/public/next.png";
 import tailwind from "/public/tailwind.png";
 import mui from "/public/mui.png";
 import stripe from "/public/stripe.png";
-import { useRouter } from "next/router";
 import { Link } from "react-scroll";
 
 const techStack = {
