@@ -70,9 +70,9 @@ export default function About() {
   };
 
   return (
-    <section className="about text-center sm:pt-20 sm:bg-[url('/plant.png')] sm:bg-auto sm:bg-no-repeat sm:bg-[left_top_28rem]">
+    <section id="about" className="about text-center sm:pt-20 sm:mb-32">
       <div className="p-5">
-        <div className="flex flex-col text-center sm:flex-row sm:justify-center sm:content-start sm:mb-40">
+        <div className="flex flex-col text-center sm:flex-row sm:justify-center sm:content-start sm:mb-32">
           <Image
             src={imageShadow}
             alt="image shadow"
@@ -98,7 +98,7 @@ export default function About() {
               people. These years trained me how to be empathetic whilst being
               goal-oriented.
             </p>
-            <p className="mb-7">
+            <p className="mb-2">
               Being a software engineer requires me to practice all the skills I
               have learned from my previous roles and some more. This became
               evident to me when I started the software engineering program an
@@ -108,13 +108,13 @@ export default function About() {
           </div>
         </div>
         <div className="sm:flex sm:flex-col sm:items-center">
-          <div className="h-24 w-58 bg-[url('/tech-stack-bg.png')] bg-contain bg-no-repeat sm:h-24 sm:w-64">
-            <h3 className="tech-stack tracking-[0.5rem] mb-14 sm:tracking-[1rem] sm:mt-1 sm:text-base">
+          <div className="sm:mt-1">
+            <h3 className="tracking-[0.5rem] mb-5 sm:tracking-[1rem] sm:mt-1 sm:text-base">
               tech stack
             </h3>
           </div>
-          <div className="sm:ml-96 sm:mt-8">
-            <div className="grid grid-cols grid-cols-4 items-center">
+          <div className="flex flex-wrap flex-row justify-center items-center sm:w-2/4">
+            <div className="flex flex-wrap flex-row justify-center items-center">
               {techStack.map((tech, idx) => (
                 <div
                   key={idx}

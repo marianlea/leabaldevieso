@@ -12,12 +12,13 @@
 body {
   background-color: #f6f6ed;
 }
+
 @font-face {
   font-family: "Gordita";
-  src: url("/public/Gordita-Regular.otf");
+  src: url("/Gordita-Regular.otf");
 }
 
 @font-face {
   font-family: "Gordita-Light";
-  src: url("/public/Gordita-Light.otf");
+  src: url("/Gordita-Light.otf");
 }

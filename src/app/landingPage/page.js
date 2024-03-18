@@ -5,11 +5,13 @@ import zigzag from "/public/zigzag.png";
 export default function LandingPage() {
   return (
     <section
+      id="landing"
       className="
-        landing-page 
-        h-screen overflow-hidden
+        landing-page
+        h-screen
         mt-[-2.5rem] 
         sm:mt-[-4rem]
+        px-10
         "
     >
       <Image

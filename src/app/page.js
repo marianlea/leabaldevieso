@@ -1,11 +1,13 @@
-import NavBar from "./components/NavBar";
-import About from "./pages/About";
-import LandingPage from "./pages/LandingPage";
-import Project from "./pages/Project";
+import NavBar from "@/components/NavBar";
+import About from "./about/page";
+import Contact from "./contact/page";
+import LandingPage from "./landingPage/page";
+import Project from "./project/[id]/page";
 import mendls from "/public/mendls.png";
 import pipeline from "/public/pipeline.png";
 import stitches from "/public/stitches.png";
-import tic from "/public/tit-tac-toe.png";
+import tic from "/public/tic-tac-toe.png";
+import Projects from "./projects/page";
 
 const projects = [
   {
@@ -58,13 +60,15 @@ const projects = [
 
 export default function Home() {
   return (
-    <main className="w-screen home font-gordita p-3 sm:p-12">
+    <main className="w-screen home font-gordita py-3 sm:p-12">
       <NavBar />
       <LandingPage />
       <About />
+      <Projects />
       {projects.map((project, idx) => (
-        <Project key={idx} project={project} />
+        <Project key={idx} id={project.name} project={project} />
       ))}
+      <Contact />
     </main>
   );
 }

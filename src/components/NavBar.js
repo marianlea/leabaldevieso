@@ -1,5 +1,5 @@
 "use client";
-
+import { Link } from "react-scroll";
 import Image from "next/image";
 import home from "/public/home.png";
 import download from "/public/download.svg";
@@ -7,9 +7,9 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "about", href: "#", current: false },
-  { name: "projects", href: "#", current: false },
-  { name: "contact", href: "#", current: false },
+  { name: "about", href: "/about", current: false },
+  { name: "projects", href: "/projects", current: false },
+  { name: "contact", href: "/contact", current: false },
 ];
 
 function classNames(...classes) {
@@ -18,15 +18,19 @@ function classNames(...classes) {
 
 export default function NavBar() {
   return (
-    <Disclosure as="nav" className="bg-main sticky top-0 z-10">
+    <Disclosure as="nav" className="bg-main sticky top-0 z-10 px-5">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7x">
-            <Image
-              src={home}
-              alt="home"
-              className="absolute w-8 h-8 mt-3 sm:w-12 sm:h-12"
-            />
+            <Link
+              className="absolute w-8 h-8 mt-3 sm:w-12 sm:h-12 z-50"
+              to="landing"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              <Image src={home} alt="home" />
+            </Link>
             <div className="relative flex h-16 items-center justify-between flex-row-reverse sm:h-20">
               <div className="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto">
                 <button
@@ -45,7 +49,7 @@ export default function NavBar() {
                     sm:text-base"
                 >
                   <span className="absolute -inset-1.5" />
-                  <span className="mr-1">resume</span>
+                  <span className="mr-1 tracking-widest">resume</span>
                   <Image
                     src={download}
                     alt="download resume"
@@ -67,11 +71,15 @@ export default function NavBar() {
                 </div>
                 <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="hidden sm:ml-6 sm:block">
-                    <div className="flex space-x-4">
+                    <div className="flex space-x-4 tracking-widest">
                       {navigation.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
-                          href={item.href}
+                          to={item.name}
+                          offset={item.name === "projects" ? -200 : 0}
+                          spy={true}
+                          smooth={true}
+                          duration={500}
                           className={classNames(
                             item.current
                               ? "text-gray-500"
@@ -81,7 +89,7 @@ export default function NavBar() {
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -93,20 +101,24 @@ export default function NavBar() {
           <Disclosure.Panel className="sm:hidden absolute bg-main right-0 w-full origin-top-right rounded-md shadow-lg text-center">
             <div className="pb-1 pt-2">
               {navigation.map((item) => (
-                <Disclosure.Button
+                <Link
+                  to={item.name}
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
                   key={item.name}
                   as="a"
-                  href={item.href}
                   className={classNames(
                     item.current
                       ? "text-gray-400"
                       : "text-black hover:text-gray-400",
-                    "block rounded-md px-3 py-3 text-sm font-sm"
+                    "block rounded-md px-3 py-3 text-sm font-sm tracking-widest"
                   )}
                   aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
-                </Disclosure.Button>
+                </Link>
               ))}
             </div>
           </Disclosure.Panel>
