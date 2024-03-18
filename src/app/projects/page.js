@@ -1,6 +1,4 @@
 "use client";
-
-import Card from "@/components/Card";
 import mendls from "/public/mendls.png";
 import pipeline from "/public/pipeline.png";
 import stitches from "/public/stitches.png";
@@ -58,14 +56,25 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="w-full p-5">
-      <div className="text-center tracking-widest text-xl my-2">
+    <section id="projects" className="w-full p-5 mt-10 sm:mt-5">
+      <div className="text-center tracking-widest text-xl my-2 sm:mb-8">
         <h3>projects</h3>
       </div>
-      <div className="w-full sm:flex sm:items-center sm:justify-center">
-        <div className="sm:w-2/3 sm:flex sm:items-center sm:justify-center">
+      <div className="w-full flex items-center justify-center">
+        <div className="w-full text-sm tracking-widest flex flex-wrap items-center justify-center">
           {projects.map((project, idx) => (
-            <Card key={idx} project={project} />
+            <div key={idx}>
+              <Link
+                to={project.name}
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+                className="mr-3 sm:mr-8 hover:text-sub-text"
+              >
+                {project.name}
+              </Link>
+            </div>
           ))}
         </div>
       </div>

@@ -15,14 +15,14 @@ export default function Contact() {
         alt="two people talking"
         className="w-72 h-64 sm:w-96 sm:h-96"
       />
-      <div className="sm:flex sm:flex-row sm:w-2/3 text-center">
-        <div className="my-5">
-          <h3 className="text-lg mb-2 tracking-widest">get in touch</h3>
-          <p className="text-sm px-6">
+      <div className="sm:flex sm:flex-row sm:justify-center sm:w-2/3">
+        <div className="my-5 text-end">
+          <h3 className="text-lg mb-2 tracking-widest px-6">get in touch</h3>
+          <p className="text-sm px-6 tracking-wider">
             hello, let me know if you have any questions or just want to say hi
           </p>
         </div>
-        <div className="flex flex-row justify-center items-center sm:w-2/3">
+        <div className="flex flex-row justify-center text-center sm:justify-start items-center sm:w-2/3">
           <a href="mailto:mlbaldevieso@gmail.com">
             <Image
               className="w-16 h-16 mr-5"
@@ -39,7 +39,7 @@ export default function Contact() {
           </a>
           <a href="https://www.linkedin.com/in/leabaldevieso/">
             <Image
-              className="w-16 h-16 mr-5"
+              className="w-16 h-16"
               src={linkedin}
               alt="link to lea's linkedin"
             />

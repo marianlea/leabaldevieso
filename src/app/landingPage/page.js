@@ -23,8 +23,19 @@ export default function LandingPage() {
         <div className="flex flex-col sm:flex-row justify-center items-start">
           <section className="title text-5xl font-gordita-light sm:text-7xl sm:w-2/4">
             <h1>lea</h1>
-            <h1>baldevieso</h1>
-            <p className="text-xs mt-3 sm:text-base">
+            <h1
+              className="
+            animate-typing overflow-hidden whitespace-nowrap"
+            >
+              baldevieso
+              <span
+                className="
+            animate-typing overflow-hidden whitespace-nowrap"
+              >
+                |
+              </span>
+            </h1>
+            <p className="text-xs mt-3 sm:text-base tracking-widest">
               a sydney-based software engineer striving to create meaningful
               experiences through technology
             </p>

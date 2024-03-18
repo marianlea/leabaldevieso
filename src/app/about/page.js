@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import imageShadow from "/public/portrait-bg.png";
+import portrait from "/public/portrait.png";
 import js from "/public/js.png";
 import html from "/public/html.png";
 import css from "/public/css.png";
@@ -72,11 +72,11 @@ export default function About() {
   return (
     <section id="about" className="about text-center sm:pt-20 sm:mb-32">
       <div className="p-5">
-        <div className="flex flex-col text-center sm:flex-row sm:justify-center sm:content-start sm:mb-32">
+        <div className="flex flex-col text-center sm:flex-row sm:justify-center sm:content-start sm:mb-32 tracking-widest">
           <Image
-            src={imageShadow}
+            src={portrait}
             alt="image shadow"
-            className="h-64 w-44 self-center mb-7 sm:mr-44 sm:self-start"
+            className="h-62 w-56 self-center mb-7 sm:mr-44 sm:self-start"
           />
           <div className="text-xs sm:text-sm sm:w-4/12 sm:text-justify">
             <p className="mb-7">
@@ -130,7 +130,7 @@ export default function About() {
                     }`}
                   />
                   {hoveredIndex === idx && (
-                    <p className="absolute top-0 left-0 bg-accent rounded-md text-xs p-1 tracking-[0.1rem] shadow">
+                    <p className="absolute top-0 left-0 bg-accent text-xs p-1 tracking-[0.1rem] shadow">
                       {pickName(idx)}
                     </p>
                   )}

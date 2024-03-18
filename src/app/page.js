@@ -66,7 +66,7 @@ export default function Home() {
       <About />
       <Projects />
       {projects.map((project, idx) => (
-        <Project key={idx} id={project.name} project={project} />
+        <Project key={idx} project={project} />
       ))}
       <Contact />
     </main>

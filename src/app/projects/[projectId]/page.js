@@ -15,7 +15,7 @@ import next from "/public/next.png";
 import tailwind from "/public/tailwind.png";
 import mui from "/public/mui.png";
 import stripe from "/public/stripe.png";
-import { Link } from "react-scroll";
+import Link from "next/link";
 
 const techStack = {
   javascript: js,
@@ -46,16 +46,17 @@ export default function Project({ project }) {
   };
 
   return (
-    <section className="py-10 px-5 sm:py-16 flex flex-col justify-center items-center text-center p-auto">
+    <section
+      id={project.name}
+      className="py-10 px-5 sm:py-16 flex flex-col justify-center items-center text-center p-auto"
+    >
       <div className="flex flex-col justify-center items-center text-center">
         <div className="flex justify-center w-full sm:w-2/4">
-          <Link to={project.name}>
-            <Image
-              src={project.image}
-              alt={`${project.name} screenshot`}
-              className="w-full h-full "
-            />
-          </Link>
+          <Image
+            src={project.image}
+            alt={`${project.name} screenshot`}
+            className="w-full h-full "
+          />
         </div>
         <div className="w-full text-center text-sm sm:flex sm:flex-row sm:justify-center sm:w-2/4 sm:m-auto sm:mt-6">
           <div className="my-3 text-lg sm:w-2/4 sm:text-start sm:text-1xl sm:tracking-[1rem]">
@@ -76,7 +77,7 @@ export default function Project({ project }) {
                     }`}
                   />
                   {hoveredIndex === idx && (
-                    <p className="absolute top-0 left-0 bg-accent rounded-md text-xs p-1 tracking-[0.1rem] shadow">
+                    <p className="absolute top-0 left-0 bg-accent text-xs p-1 tracking-[0.1rem] shadow">
                       {tech}
                     </p>
                   )}
@@ -85,11 +86,18 @@ export default function Project({ project }) {
             </div>
           </div>
           <div className="sm:w-2/4">
-            <p className="my-3 sm:text-start">
-              <span className="mr-3">github</span>|
-              <span className="ml-3">live site</span>
+            <p className="my-3 sm:text-start tracking-widest">
+              <span className="mr-3">
+                <Link href={project.githubLink}>github</Link>
+              </span>
+              |
+              <span className="ml-3">
+                <Link href={project.liveSite}>live site</Link>
+              </span>
             </p>
-            <p className="my-3 sm:text-justify">{project.description}</p>
+            <p className="my-3 sm:text-justify tracking-wider">
+              {project.description}
+            </p>
           </div>
         </div>
       </div>
