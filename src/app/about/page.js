@@ -76,7 +76,7 @@ export default function About() {
           <Image
             src={portrait}
             alt="image shadow"
-            className="h-62 w-56 self-center mb-7 sm:mr-44 sm:self-start"
+            className="h-621 w-56 self-center mb-7 sm:mr-44 sm:self-start"
           />
           <div className="text-xs sm:text-sm sm:w-4/12 sm:text-justify">
             <p className="mb-7">

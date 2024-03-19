@@ -19,10 +19,10 @@ export default function Contact() {
         <div className="my-5 text-end">
           <h3 className="text-lg mb-2 tracking-widest px-6">get in touch</h3>
           <p className="text-sm px-6 tracking-wider">
-            hello, let me know if you have any questions or just want to say hi
+            hello, let me know if you have any questions or just wants to say hi
           </p>
         </div>
-        <div className="flex flex-row justify-center text-center sm:justify-start items-center sm:w-2/3">
+        <div className="flex flex-row justify-center text-center sm:justify-start items-center">
           <a href="mailto:mlbaldevieso@gmail.com">
             <Image
               className="w-16 h-16 mr-5"
