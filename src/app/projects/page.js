@@ -31,7 +31,7 @@ export default function Projects() {
       githubLink: "https://github.com/yangzhie/pipeline",
       liveSite: "https://github.com/yangzhie/pipeline",
       description:
-        "a single page application using REST JSON API to call petrol stations and their locations utilising Google Maps API, the app also features nearest servos based on user location as well as current time and date",
+        "created by a small group of four, pipeline is a single page application using REST JSON API to call petrol stations and their locations utilising Google Maps API, the app also features nearest servos based on user location as well as current time and date",
       techUsed: ["javascript", "node", "express", "css", "html"],
       image: pipeline,
     },
@@ -40,7 +40,7 @@ export default function Projects() {
       githubLink: "https://github.com/marianlea/stitches",
       liveSite: "https://stitches-z160.onrender.com/",
       description:
-        "stitches is a multipage CRUD app, where people can post and reply to posts, follow other users and view their posts in their feed, a simpler clone of Twitter",
+        "stitches is a multipage CRUD app, where people can sign up, log in and out using BCrypt for password-hashing and built in web forms to collect data from users who can post and reply to posts, follow other users and view their posts in their feed when logged in, session cookies were also implemented for better user experience when navigating through the app as well as security",
       techUsed: ["postgres", "javascript", "node", "express", "css", "html"],
       image: stitches,
     },
@@ -49,7 +49,7 @@ export default function Projects() {
       githubLink: "https://github.com/marianlea/tic-tac-toe",
       liveSite: "https://marianlea.github.io/tic-tac-toe/",
       description:
-        "a Ghibli Theme tic-tac-toe game that has a responsive interface that allows plaayers to input their name, choose their avatars that also serves as their token in the board, it keeps track of scores by reducing one heart from the player who lost in the round, the first player who runs out of hearts loses and the other player is declared as the winner",
+        "a Ghibli Theme tic-tac-toe game that has a responsive interface that allows players to input their name, choose their avatars that also serves as their token in the board, it keeps track of scores by reducing one heart from the player who lost in the round, the first player who runs out of hearts loses and the other player is declared as the winner",
       techUsed: ["javascript", "node", "express", "css", "html"],
       image: tic,
     },
