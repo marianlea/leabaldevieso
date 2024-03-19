@@ -6,6 +6,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Lea",
   description: "Lea Baldevieso Portfolio",
+  icon: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
