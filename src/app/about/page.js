@@ -105,37 +105,35 @@ export default function About() {
               intensive full-time program which taught me programming
               fundamentals, languages, frameworks, libraries and best-practices.
             </p>
-          </div>
-        </div>
-        <div className="sm:flex sm:flex-col sm:items-center">
-          <div className="sm:mt-1">
-            <h3 className="tracking-[0.5rem] mb-5 sm:tracking-[1rem] sm:mt-1 sm:text-base">
-              tech stack
-            </h3>
-          </div>
-          <div className="flex flex-wrap flex-row justify-center items-center sm:w-2/4">
+            <div className="sm:mt-8">
+              <h3 className="tracking-[0.5rem] mb-5 sm:tracking-[1rem] sm:mt-1 sm:text-base">
+                tech stack
+              </h3>
+            </div>
             <div className="flex flex-wrap flex-row justify-center items-center">
-              {techStack.map((tech, idx) => (
-                <div
-                  key={idx}
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter(idx)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <Image
-                    src={tech}
-                    alt={pickName(idx)}
-                    className={`h-10 w-10 m-1 sm:h-16 sm:w-16 sm:m-2 ${
-                      hoveredIndex === idx ? "transform scale-150" : ""
-                    }`}
-                  />
-                  {hoveredIndex === idx && (
-                    <p className="absolute top-0 left-0 bg-accent text-xs p-1 tracking-[0.1rem] shadow">
-                      {pickName(idx)}
-                    </p>
-                  )}
-                </div>
-              ))}
+              <div className="flex flex-wrap flex-row justify-center items-center">
+                {techStack.map((tech, idx) => (
+                  <div
+                    key={idx}
+                    className="relative"
+                    onMouseEnter={() => handleMouseEnter(idx)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <Image
+                      src={tech}
+                      alt={pickName(idx)}
+                      className={`h-10 w-10 m-1 sm:h-16 sm:w-16 sm:m-2 ${
+                        hoveredIndex === idx ? "transform scale-150" : ""
+                      }`}
+                    />
+                    {hoveredIndex === idx && (
+                      <p className="absolute top-0 left-0 bg-accent text-xs p-1 tracking-[0.1rem] shadow">
+                        {pickName(idx)}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

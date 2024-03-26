@@ -58,7 +58,7 @@ export default function Projects() {
   return (
     <section id="projects" className="w-full p-5 mt-10 sm:mt-5">
       <div className="text-center tracking-widest text-xl my-2 sm:mb-8">
-        <h3>projects</h3>
+        <h3 className="sm:text-[1.5rem] tracking-[0.5rem]">projects</h3>
       </div>
       <div className="w-full flex items-center justify-center">
         <div className="w-full text-sm tracking-widest flex flex-wrap items-center justify-center">

@@ -6,6 +6,7 @@
   margin: none;
   padding: none;
   box-sizing: border-box;
+  border: 1px solid lime;
 }
 
 body {
