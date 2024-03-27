@@ -86,16 +86,10 @@ export default function NavBar() {
                           key={item.name}
                           href={`/${item.name}`}
                           to={item.name}
-                          offset={item.name === "projects" ? -200 : 0}
+                          offset={item.name === "contact" ? 0 : -100}
                           spy={true}
                           smooth={true}
                           duration={500}
-                          className={classNames(
-                            item.current
-                              ? "text-gray-500"
-                              : "text-black hover:text-gray-400",
-                            "rounded-md px-3 py-2 text-sm font-sm sm:text-base"
-                          )}
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
@@ -120,12 +114,6 @@ export default function NavBar() {
                   key={item.name}
                   href={`/${item.name}`}
                   as="a"
-                  className={classNames(
-                    item.current
-                      ? "text-gray-400"
-                      : "text-black hover:text-gray-400",
-                    "block rounded-md px-3 py-3 text-sm font-sm tracking-widest"
-                  )}
                   aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
