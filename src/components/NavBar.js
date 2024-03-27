@@ -1,5 +1,6 @@
 "use client";
 import { Link } from "react-scroll";
+import { useState } from "react";
 import Image from "next/image";
 import home from "/public/home.png";
 import download from "/public/download.svg";
@@ -18,12 +19,20 @@ function classNames(...classes) {
 }
 
 export default function NavBar() {
+  const [currentPage, setCurrentPage] = useState("home");
+
+  function handleSetCurrentPage(e) {
+    setCurrentPage(e.target.name);
+  }
+
   return (
     <Disclosure as="nav" className="bg-main sticky top-0 z-10 px-5">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7x">
             <Link
+              name="home"
+              onClick={handleSetCurrentPage}
               className="absolute w-8 h-8 mt-3 sm:w-12 sm:h-12 z-50"
               to="landing"
               spy={true}
@@ -84,13 +93,20 @@ export default function NavBar() {
                       {navigation.map((item) => (
                         <Link
                           key={item.name}
-                          href={`/${item.name}`}
+                          onClick={handleSetCurrentPage}
+                          name={item.name}
+                          href={item.href}
                           to={item.name}
                           offset={item.name === "contact" ? 0 : -100}
                           spy={true}
                           smooth={true}
                           duration={500}
                           aria-current={item.current ? "page" : undefined}
+                          className={
+                            currentPage === item.name
+                              ? "text-sub-text"
+                              : "text-black"
+                          }
                         >
                           {item.name}
                         </Link>

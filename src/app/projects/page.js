@@ -4,8 +4,15 @@ import pipeline from "/public/pipeline.png";
 import stitches from "/public/stitches.png";
 import tic from "/public/tic-tac-toe.png";
 import { Link } from "react-scroll";
+import { useState } from "react";
 
 export default function Projects() {
+  const [currentProject, setCurrentProject] = useState("mendl's");
+
+  function handleSetCurrentProject(e) {
+    setCurrentProject(e.target.name);
+  }
+
   const projects = [
     {
       name: "mendl's",
@@ -65,12 +72,18 @@ export default function Projects() {
           {projects.map((project, idx) => (
             <div key={idx}>
               <Link
+                name={project.name}
                 to={project.name}
                 spy={true}
                 smooth={true}
                 offset={-100}
                 duration={500}
-                className="mr-3 sm:mr-8 hover:text-sub-text"
+                onClick={handleSetCurrentProject}
+                className={
+                  currentProject === project.name
+                    ? "text-sub-text mr-3 sm:mr-8"
+                    : "text-black mr-3 sm:mr-8 hover:text-sub-text"
+                }
               >
                 {project.name}
               </Link>
